@@ -5,7 +5,7 @@
         <title>WebSocket通信</title>
         <script type="text/javascript">
 
-            var wSck= new WebSocket("echo.websocket.org");// WebSocketオブジェクト生成
+            var wSck= new WebSocket("ws:127.0.0.1:52041");// WebSocketオブジェクト生成
 
             wSck.onopen = function() {//ソケット接続時のアクション
                 document.getElementById('show').innerHTML += "接続しました。" + "<br/>";
@@ -26,7 +26,7 @@
     <body>
         <div
             style="width: 500px; height: 200px; overflow-y: auto; border: 1px solid #333;"
-            id="show"></div>
+            id="show">a</div>
         <input type="text" size="80" id="msg" name="msg" />
         <input type="button" value="送信" onclick="sendMsg();" />
     </body>
