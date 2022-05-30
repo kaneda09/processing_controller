@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>WebSocket通信</title>
-        <script type="text/javascript">
 
-            var wSck= new WebSocket("ws:10.124.57.228:52041");// WebSocketオブジェクト生成
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>WebSocket通信</title>
+    <script type="text/javascript">
 
-            wSck.onopen = function() {//ソケット接続時のアクション
-                document.getElementById('show').innerHTML += "接続しました。" + "<br/>";
-            };
+        var wSck = new WebSocket("ws:192.168.10.24:52041");// WebSocketオブジェクト生成
 
-            var sendMsg1 = function(val) {//
-                wSck.send(1);//ソケットに送信
-            };
-            var sendMsg2 = function(val) {//
-               wSck.send(2);
-            };
-        </script>
-    </head>
+        var sendMsg1 = function (val) {//
+            wSck.send('l');//ソケットに送信
+        };
+        var sendMsg2 = function (val) {//
+            wSck.send('r');
+        };
+    </script>
+</head>
 
-    <body>
-        <div
-            style="width: 200px; height: 100px; overflow-y: auto; border: 1px solid #333;"
-            id="show"></div>
-        <input type="button" value="Left" onclick="sendMsg1();" />
-        <input type="button" value="Right" onclick="sendMsg2();" />
+<body>
+     <input type="button" value="Left" onclick="sendMsg1();" />
+    <input type="button" value="Right" onclick="sendMsg2();" />
 
-    </body>
+</body>
+
 </html>
